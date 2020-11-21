@@ -26,7 +26,7 @@ public void keyPressed(){
      bob.turn(-10);
      }
   if(key == 'd'){
-     bob.turn(10);
+     bob.turn(+10);
      }
   if(key == 'h'){
      bob.hyperspace();
