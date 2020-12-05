@@ -1,18 +1,18 @@
-Star[] nickiMinaj;
+Star[] nickiMinaj = new Star[400];
 Spaceship bob = new Spaceship();
 ArrayList <Asteroid> ast = new ArrayList <Asteroid>();
 public void setup() 
 {
   size(500,500);
   background(0);
-  nickiMinaj = new Star[200];
   for(int i = 0; i < nickiMinaj.length; i++){
     nickiMinaj[i] = new Star();
   }
-  for(int j = 0; j < 21; j++){
+  for(int j= 0; j < 20; j++){
     ast.add(new Asteroid());
   }
 }
+
 public void draw() 
 {
   background(0);
@@ -21,11 +21,11 @@ public void draw()
   }
   bob.show();
   bob.move();
-  for(int i = 0; i <ast.size(); i++){
-   ast.get(i).show();
-   ast.get(i).move();
-    if(dist(ast.get(i).getX(),ast.get(i).getY(),bob.getX(),bob.getY()) < 20){
-     ast.remove(i);
+  for(int h = 0; h < ast.size(); h++){
+    ast.get(h).show();
+    ast.get(h).move();
+    if(dist(ast.get(h).getX(),ast.get(h).getY(),bob.getX(),bob.getY()) < 20){
+      ast.remove(h);
     }
   }
 }
