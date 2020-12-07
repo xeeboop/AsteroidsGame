@@ -5,8 +5,8 @@ class Bullet extends Floater{
     myCenterY = myShip.myCenterY;
     dRadians = (float)(myShip.myPointDirection * (Math.PI/180));
     myPointDirection = myShip.myPointDirection;
-    myCenterX = 5 * Math.cos(dRadians) + myShip.myCenterX;
-    myCenterY = 5 * Math.sin(dRadians) + myShip.myCenterY;
+    myXspeed = 5 * Math.cos(dRadians) + myShip.myCenterX;
+    myYspeed = 5 * Math.sin(dRadians) + myShip.myCenterY;
   }
   public void show(){
     fill(0, 255, 50);
@@ -20,7 +20,7 @@ class Bullet extends Floater{
   public float getX(){
     return (float) myCenterX;
    }
-    public float getY(){
+  public float getY(){
     return (float) myCenterY;
     }
 }
