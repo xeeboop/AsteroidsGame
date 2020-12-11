@@ -1,15 +1,17 @@
 class Bullet extends Floater{
-  private float dRadians;
-  public Bullet(Spaceship myShip){
-    myCenterX = myShip.myCenterX;
-    myCenterY = myShip.myCenterY;
-    dRadians = (float)(myShip.myPointDirection * (Math.PI/180));
-    myPointDirection = myShip.myPointDirection;
-    myXspeed = 5 * Math.cos(dRadians) + myShip.myCenterX;
-    myYspeed = 5 * Math.sin(dRadians) + myShip.myCenterY;
+  private double dRadians;
+  public Bullet(Spaceship theship){
+    myColor=color(0,255,50);
+    myCenterX=theship.myCenterX;
+    myCenterY=theship.myCenterY;
+    myPointDirection=theship.myPointDirection;
+    dRadians = theship.myPointDirection*(Math.PI/180);
+    myXspeed = theship.myXspeed + Math.cos(dRadians);
+    myYspeed = theship.myYspeed + Math.sin(dRadians);
+    accelerate(6);
   }
   public void show(){
-    fill(0, 255, 50);
+    fill(myColor);
     noStroke();
     ellipse((float)myCenterX, (float)myCenterY, 10, 10);
   }
@@ -20,7 +22,7 @@ class Bullet extends Floater{
   public float getX(){
     return (float) myCenterX;
    }
-  public float getY(){
+    public float getY(){
     return (float) myCenterY;
     }
 }
